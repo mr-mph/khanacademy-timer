@@ -5,7 +5,7 @@
   "version": "1.0",
   "web_accessible_resources": [
     {
-      "resources": ["timer.html"],
+      "resources": ["timer.html", "timer.js"],
       "matches": ["https://*.khanacademy.org/*"]
     }
   ],

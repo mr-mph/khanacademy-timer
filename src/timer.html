@@ -1,71 +1,88 @@
-<div class="watch">
-  <h2 id="watch">00:00:00:00</h2>
-</div>
-<div class="buttons">
-  <button id="start">Start</button>
-  <button id="pause">Pause</button>
-  <button id="reset">Reset</button>
-</div>
-<style>
-  @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
-  :root {
-    --primary-color: rgb(36 129 161);
-    --primary-color-darker: rgb(15 108 140);
-  }
+<!-- credit to https://codepen.io/henriquelothammer/pen/NWNQBwq -->
+<body>
+  <div class="container">
+    <div class="watch">
+      <h2 id="watch">00:00:00:00</h2>
+    </div>
+    <div class="buttons">
+      <button id="start">Start</button>
+      <button id="pause">Pause</button>
+      <button id="reset">Reset</button>
+    </div>
+  </div>
+  <script src="timer.js"></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
+    :root {
+      --primary-color: rgb(36 129 161);
+      --primary-color-darker: rgb(15 108 140);
+      --primary-color-darkest: rgb(11, 73, 93);
+    }
 
-  * {
-    box-sizing: border-box;
-    outline: 0;
-    padding: 0;
-    margin: 0;
-  }
+    * {
+      box-sizing: border-box;
+      outline: 0;
+      padding: 0;
+      margin: 0;
+    }
 
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: "Open sans", sans-serif;
-    font-size: 1.3em;
-    line-height: 1.5em;
-    max-width: 640px;
-    height: fit-content;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-  }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Open sans", sans-serif;
+      font-size: 1.3em;
+      line-height: 1.5em;
+    }
 
-  h1 {
-    text-align: center;
-    margin: 10px 0;
-  }
-  .watch {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 15px 0;
-  }
-  h2 {
-    font-size: 3em;
-    font-weight: 400;
-    height: 50px;
-    width: 335px;
-  }
-  h2.paused {
-    color: #2e7e92;
-  }
-  .buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 10px 0;
-  }
-  .buttons button {
-    margin: 0 5px;
-    border: none;
-    padding: 10px;
-    background-color: var(--primary-color-darker);
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    border-radius: 5px;
-  }
-</style>
+    .container {
+      max-width: 640px;
+      background-color: #e9e9e99b;
+
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 10px 0;
+    }
+    .watch {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin: 15px 0;
+    }
+    h2 {
+      font-size: 3em;
+      font-weight: 400;
+      height: 50px;
+      width: 335px;
+    }
+    h2.paused {
+      color: #2e7e92;
+    }
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin: 10px 0;
+    }
+    .buttons button {
+      margin: 0 5px;
+      border: none;
+      padding: 10px;
+      background-color: var(--primary-color);
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border-radius: 5px;
+    }
+
+    .buttons button:hover {
+      background-color: var(--primary-color-darker);
+    }
+    .buttons button:active {
+      background-color: var(--primary-color-darkest);
+    }
+  </style>
+</body>
