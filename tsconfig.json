@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "strict": true,
+    "lib": ["ES2017", "dom"],
+    "types": ["chrome-types"],
+    "removeComments": true
+  },
+
+  "include": ["src/**/*"]
+}

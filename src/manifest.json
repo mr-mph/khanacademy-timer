@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "khantimer",
+  "description": "adds a timer to khan academy",
+  "version": "1.0",
+  "web_accessible_resources": [
+    {
+      "resources": ["timer.html"],
+      "matches": ["https://*.khanacademy.org/*"]
+    }
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["https://*.khanacademy.org/*"],
+      "js": ["script.js"]
+    }
+  ]
+}
