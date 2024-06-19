@@ -39,10 +39,12 @@ document.addEventListener("click", (e) => {
 });
 
 window.addEventListener("message", (event) => {
-  if (event.data.action === "pause") {
+  console.log(event.data);
+
+  if (event.data === "pause") {
     pauseWatch();
   }
-  if (event.data.action === "restart") {
+  if (event.data === "restart") {
     resetWatch();
     startWatch();
   }

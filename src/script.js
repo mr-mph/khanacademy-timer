@@ -9,24 +9,6 @@ window.addEventListener("load", () => {
     var submitButton;
     var nextQuestionButton;
     setTimeout(() => {
-        setInterval(() => {
-            nextQuestionButton = document.querySelector(`[data-testid="exercise-next-question"]`);
-            if (nextQuestionButton) {
-                nextQuestionButton.addEventListener("click", (e) => {
-                    console.log("restart timer");
-                    const iframeWindow = iframe.contentWindow;
-                    iframeWindow === null || iframeWindow === void 0 ? void 0 : iframeWindow.postMessage({ action: "restart" });
-                });
-            }
-            else {
-                submitButton = document.querySelector(`[data-testid="exercise-check-answer"]`);
-                submitButton.addEventListener("click", (e) => {
-                    console.log("pause timer");
-                    const iframeWindow = iframe.contentWindow;
-                    iframeWindow === null || iframeWindow === void 0 ? void 0 : iframeWindow.postMessage({ action: "pause" });
-                });
-            }
-        }, 1000);
         const testContainer = document.querySelector(".task-container");
         if (!testContainer)
             throw new Error("page not loaded");
@@ -37,5 +19,33 @@ window.addEventListener("load", () => {
         iframe.style.right = "-70px";
         scale(iframe, 0.6, 200, 400);
         testContainer.append(iframe);
+        setTimeout(() => {
+            const iframeWindow = iframe.contentWindow;
+            if (!iframeWindow)
+                throw new Error("iframe window not found");
+            iframeWindow.postMessage("restart", "*");
+        }, 500);
+        setInterval(() => {
+            nextQuestionButton = document.querySelector(`[data-testid="exercise-next-question"]`);
+            if (nextQuestionButton) {
+                nextQuestionButton.addEventListener("click", (e) => {
+                    console.log("restart timer");
+                    const iframeWindow = iframe.contentWindow;
+                    if (!iframeWindow)
+                        throw new Error("iframe window not found");
+                    iframeWindow.postMessage("restart", "*");
+                });
+            }
+            else {
+                submitButton = document.querySelector(`[data-testid="exercise-check-answer"]`);
+                submitButton.addEventListener("click", (e) => {
+                    console.log("pause timer");
+                    const iframeWindow = iframe.contentWindow;
+                    if (!iframeWindow)
+                        throw new Error("iframe window not found");
+                    iframeWindow.postMessage("pause", "*");
+                });
+            }
+        }, 1000);
     }, 2000);
 });
