@@ -14,8 +14,8 @@ window.addEventListener("load", () => {
             throw new Error("page not loaded");
         iframe = document.createElement("iframe");
         iframe.src = chrome.runtime.getURL("timer.html");
-        iframe.style.position = "absolute";
-        iframe.style.top = "-10px";
+        iframe.style.position = "fixed";
+        iframe.style.top = "40px";
         iframe.style.right = "-50px";
         scale(iframe, 0.6, 200, 400);
         testContainer.append(iframe);
