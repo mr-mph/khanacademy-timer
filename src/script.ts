@@ -55,6 +55,6 @@ window.addEventListener("load", () => {
           iframeWindow.postMessage("pause", "*");
         });
       }
-    }, 1000);
+    }, 100);
   }, 2000);
 });
