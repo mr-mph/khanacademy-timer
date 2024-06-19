@@ -15,8 +15,8 @@ window.addEventListener("load", () => {
         iframe = document.createElement("iframe");
         iframe.src = chrome.runtime.getURL("timer.html");
         iframe.style.position = "absolute";
-        iframe.style.top = "-30px";
-        iframe.style.right = "-70px";
+        iframe.style.top = "-10px";
+        iframe.style.right = "-50px";
         scale(iframe, 0.6, 200, 400);
         testContainer.append(iframe);
         setTimeout(() => {
